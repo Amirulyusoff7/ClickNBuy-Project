@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+html{
+    overflow: hidden;
+   /* background-image: url('../../imgdesign/cust.png');*/
+    background-repeat: no-repeat;
+     background-size: 1537px 722px;
+}
+body{
+
+    margin: 0px;
+    padding: 0px;
+    }
+  /*wrapper for login*/
+    .wrapper{
+      display: flex;
+      margin-left: 12.5%;
+      flex-direction: column; 
+      justify-content: center;
+      width: 100%;
+      min-height: 100%;
+      padding: 20px;
+      margin-top: 1%;
+    }
+    /*wrapper 2 for register*/
+    .wrapper2{
+       display: flex;
+      margin-left: 12.5%;
+      flex-direction: column; 
+      justify-content: center;
+      width: 100%;
+      min-height: 100%;
+      padding: 20px;
+      margin-top: 1.3%;
+    }
+    
+    #formContent {
+      -webkit-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      background: #fff;
+      border: solid indianred;
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      padding: 0px;
+      -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      box-shadow: 0 30px 60px 0 rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    h2.active {
+      
+      color: indianred;
+      border-bottom: 3px solid indianred ;
+      font-family: poppins;
+      
+    }
+
+  h5 {
+    color: indianred;
+    font-family: poppins;
+    }
+    #formFooter {
+      background-color: #e6e1e1;
+      border-top: 1px solid #dce8f1;
+      padding: 10px;
+     
+      -webkit-border-radius: 0 0 10px 10px;
+      border-radius: 0 0 10px 10px;
+      font-family: "Poppins", sans-serif;
+      
+    }
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=tel]{
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+   margin: 5px 0 10px 0;
+  border: 0.5px solid grey;
+  background: #f1f1f1;
+}
+
+
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus {
+  background-color:#C0C0C0 ;
+  outline: none;
+} 
+
+    /*login buttn style*/
+  input[type=submit]{
+	background-color: indianred;
+  border: none; 
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px 8px;
+   
+}
+
+input[type=submit]:hover{
+background-color: maroon;
+}
+
+/*forgotpass & register button */
+#formFooter a {
+background-color:indianred;
+border-radius: 8px 8px;
+display: inline-block;
+color: white;
+text-align: center;
+padding: 8px 14px;
+border-radius: 10px 10px;
+text-decoration: none;
+}
+    
+#formFooter a:hover{
+background-color: maroon;
+ }
+
+
+/* Style the top navigation bar */
+
+nav {
+  line-height: 60px;
+  width: 100%;
+  background-color: indianred;
+  /* border-bottom-style: solid;
+  border-bottom-color:sandybrown;  */
+  
+  
+  }
+  /* Style the navigation bar links */
+  nav a {
+    text-decoration: none;
+    font-family: poppins;
+    letter-spacing: 2px;                                                                        
+    font-size: 20px;
+    margin: 0 10px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+  
+  } 
+  nav :hover {
+  
+      color: Maroon;
+      box-sizing: border-box;
+     /* border-radius:10px;*/ 
+    
+    }
+  
+  
+
+  

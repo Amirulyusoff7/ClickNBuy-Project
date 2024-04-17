@@ -1,0 +1,28 @@
+.form-cart {
+    width: 50%; /* adjust as needed */
+    margin: 0 auto; /* center the form horizontally */
+    padding: 20px; /* add some padding */
+    border: 1px solid #ccc; /* add a border */
+    border-radius: 5px; /* round the corners */
+    background-color: #f5f5f5; /* add a background color */
+    text-align: center; /* center the text */
+}
+
+.cart-img {
+    width: 250px; /* adjust as needed */
+    height: 250px; /* adjust as needed */
+    object-fit: cover; /* make the image cover the entire container */
+    border-radius: 5px; /* round the corners */
+    margin: 10px auto; /* center the image horizontally */
+    display: block; /* make the image a block element */
+}
+
+.description-box {
+    width: 100%; /* adjust as needed */
+    padding: 10px; /* add some padding */
+    border: 1px solid #ccc; /* add a border */
+    border-radius: 1px; /* round the corners */
+    background-color: #c1c3f4; /* add a background color */
+    text-align: justify; /* justify the text */
+    margin: 10px auto; /* center the description horizontally */
+}

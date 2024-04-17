@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body></body>
+</html>
+
+
+
+
+
+unpaid 
+$query ="SELECT * FROM `order`,`payment` WHERE `payment`.paymentID = `order`.paymentID AND paymentStatus = 'Unpaid' AND sellerID = '".$sellerID."'ORDER BY orderID DESC";
+$listQuery = "SELECT * FROM `orderlist`, `product`, `productOption`, `payment`, `order`
+                        WHERE `orderlist`.productOptionID = `productOption`.productOptionID AND
+                        `productOption`.productID = `product`.productID AND
+                        `order`.paymentID = `payment`.paymentID AND
+                        `order`.orderID = `orderlist`.orderID AND
+                        `order`.orderID =" .$row['orderID'].";";
+
+toship
+$query ="SELECT * FROM `order` WHERE orderStatus = 'To ship' AND sellerID = '".$sellerID."'ORDER BY orderID DESC";
+$listQuery = "SELECT * FROM `orderlist`, `product`, `productOption`, `payment`, `order`
+WHERE `orderlist`.productOptionID = `productOption`.productOptionID AND
+`productOption`.productID = `product`.productID AND
+`order`.paymentID = `payment`.paymentID AND
+`order`.orderID = `orderlist`.orderID AND
+`order`.orderID =" .$row['orderID'].";";
+
+
+shipping
+$query ="SELECT * FROM `order` WHERE orderStatus = 'Shipping' AND sellerID = '".$sellerID."'ORDER BY orderID DESC";
+$listQuery = "SELECT * FROM `orderlist`, `product`, `productOption`, `payment`, `order`
+                        WHERE `orderlist`.productOptionID = `productOption`.productOptionID AND
+                        `productOption`.productID = `product`.productID AND
+                        `order`.paymentID = `payment`.paymentID AND
+                        `order`.orderID = `orderlist`.orderID AND
+                        `order`.orderID =" .$row['orderID'].";";
+
+completed
+$query ="SELECT * FROM `order` WHERE orderStatus = 'Completed' AND sellerID = '".$sellerID."'ORDER BY orderID DESC";
+$listQuery = "SELECT * FROM `orderlist`, `product`, `productOption`, `payment`, `order`
+                        WHERE `orderlist`.productOptionID = `productOption`.productOptionID AND
+                        `productOption`.productID = `product`.productID AND
+                        `order`.paymentID = `payment`.paymentID AND
+                        `order`.orderID = `orderlist`.orderID AND
+                        `order`.orderID =" .$row['orderID'].";";
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+}
+?>
+
+
+    // foreach ($option1 as $option) {
+    //     echo "$option <br>";
+    // }
+    // echo "<br><br>";
+    // foreach ($option2 as $option) {
+    //     echo "$option <br>";
+    // }
+    // echo "<br><br>";
+    // foreach ($priceArr as $option) {
+    //     echo "$option <br>";
+    // }
+    // echo "<br><br>";
+    // foreach ($stockArr as $option) {
+    //     echo "$option <br>";
+    // }
+
+var form = document.getElementById('tableCreated');
+                var row = countTBdiv1;
+                var rowspanCount = countTBdiv2;
+                
+                var table = document.createElement("table");
+                table.setAttribute("border",1);
+
+
+                // Create an array of data
+                var data = [
+                    { value: "Value 1", rowspan: 2 },
+                    { value: "Value 2",rowspan:4 },
+                    { value: "Value 3" },
+                    { value: "Value 4", rowspan: 3 }
+                ];
+
+                // Loop through the data array
+                for (var i = 0; i < data.length; i++) {
+                    // Create a new row
+                    var row = document.createElement("tr");
+
+                    // Create a new cell
+                    var cell = document.createElement("td");
+
+                    // Set the cell's value and rowspan
+                    cell.innerHTML = data[i].value;
+                    if (data[i].rowspan) {
+                        cell.setAttribute("rowspan", data[i].rowspan);
+                    }
+
+                    // Append the cell to the row
+                    row.appendChild(cell);
+
+                    // Append the row to the table
+                    table.appendChild(row);
+                }
+
+                // Add the table to the document
+                form.appendChild(table);
+
+
+
+
+
+
+
+<?php
+
+include('dbConnection.php');
+
+if(isset($_POST['btn-submit'])){
+    $prodName = $_POST['prodName'];
+    $description = $_POST['description'];
+
+    $insertQuery = "INSERT INTO Product (name, description) VALUES ('$prodName', '$description')";
+    $result = mysqli_query($conn, $insertQuery);
+
+    if($result){
+        echo '<script type="text/javascript">alert("Product added successfully !");</script>';
+    }else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($result);
+    }
+    mysqli_close($conn);
+}
+?>
+<!DOCTYPE html>
+<hmtl lang="en">
+<head>
+    <title>Add Product</title>
+</head>
+<body>
+    <section>
+        <div>
+            <form action = "" method = "POST">
+                <input type="text" name="prodName" required placeholder="Product Name">
+                <input type="text" name="description" required placeholder="Product Description">
+                <input type="submit" name="btn-submit" value="Add Product">
+            </form>
+        </div>
+    </section>
+</body>
+</html>
